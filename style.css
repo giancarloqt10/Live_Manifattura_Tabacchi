@@ -249,11 +249,17 @@ a{
 
 .scrollbar-container{
     padding: 15px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .swiper-scrollbar{
     position: inherit !important;
     bottom: inherit !important;
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal{
+    width: calc(100% - 2.5rem) !important;
 }
 
 .swiper-scrollbar.swiper-scrollbar-horizontal{
@@ -290,19 +296,9 @@ a{
     overflow: visible;
 }
 
-.storia .testo-storia{
+.testo-storia{
     width: 60%;
-}
-
-.storia .title{
-    color: var(--color-oro);
-    margin-bottom: var(--margin-default);
-}
-
-.storia .descrizione{
-    font-size: 30px;
-    font-weight: var(--font-weigth-semi-bold);
-    margin-bottom: var(--margin-medium);
+    text-align: left !important;
 }
 
 .carousel-2{
@@ -697,6 +693,30 @@ a{
         display: block;
         color: black;
     }
+    /* ====== PROGETTO ======== */
+    .down-progetto{
+        position: relative;
+    }
+    .carousel{
+        padding-left: 5%;
+    }
+    .swiper-navigation{
+        position: absolute;
+        justify-content: center;
+        bottom: 60px;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 5;
+    }
+    .scrollbar-container{
+        margin-top: 20px;
+    }
+    /* ======= STORIA ======== */
+    .storia .swiper-navigation{
+        display: flex;
+        justify-content: center;
+        transform: translateX(50%);
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -715,6 +735,35 @@ a{
     .testo-progetto{
         width: initial;
         padding: 0 30px 20px;
+    }
+    /* ======== STORIA ========== */
+    .storia{
+        grid-template-columns: 1fr;
+        row-gap: 5rem;
+    }
+    .testo-storia{
+        width: 75%;
+    }
+    .storia .pre-title, .storia .title, .storia .paragrafo{
+        text-align: center !important;
+    }
+    .carousel-2 .contorno{
+        height: 340px;
+        width: 340px;
+        border: 1px solid var(--color-oro);
+        position: absolute;
+        top: -20px;
+        right: -20px;
+    }
+    .storia .scrollbar-container{
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* ===== PROGETTO ====== */
+    .swiper-navigation{
+        display: none;
     }
 }
 
@@ -751,7 +800,22 @@ a{
 }
 
 @media screen and (max-width: 369px) {
+    /* ====== HEADER ========= */
     .nav-links{
         top: 125px;
+    }
+    /* ======== STORIA ======= */
+    .storia{
+        row-gap: 3rem;
+    }
+    .testo-storia{
+        width: 100%;
+    }
+    .carousel-2 .swiper-wrapper{
+        height: 275px;
+        width: 275px;
+    }
+    .carousel-2 .contorno{
+        display: none;
     }
 }
