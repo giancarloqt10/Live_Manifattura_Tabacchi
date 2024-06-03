@@ -45,6 +45,7 @@ a{
     text-align: center;
     color: var(--color-oro);
     margin-bottom: var(--margin-default);
+    letter-spacing: 6px;
 }
 
 .title{
@@ -333,50 +334,73 @@ a{
 .servizi{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    color: white;
 }
 
 .servizio{
-    background-size: cover;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    border: 1px solid var(--color-oro);
+    color: white;
+    border: 0.8px solid var(--color-oro);
 }
 
 .design-mood{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('./media/image4.png') center center; 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./media/image4.png) center center no-repeat;
+    background-size: cover;
 }
 
 .vista{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('./media/image5.png') center center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./media/image5.png) center center no-repeat;
+    background-size: cover;
 }
 
 .lifestyle{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('./media/image6.png') center center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./media/image6.jpeg) center center no-repeat;
+    background-size: cover;
 }
 
-.testo-container:hover{
-    transition: all 1.5s ease-in-out;
+.description{
+    position: relative;
+    transition: all ease-in-out .3s;
+    height: 100%;
+    min-height: 500px;
 }
 
-.testo-container .descrizione{
-    font-size: 35px;
-    margin: var(--margin-default) 0;
+.description:hover{
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.testo-container .paragrafo{
-    display: none;
-    transition: all 1.5s ease-in-out;
+.testo-servizio{
+    padding: 0 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.servizio:hover .paragrafo{
-    display: block;
-    transition: all 1.5s ease-in;
+.description:hover .testo-servizio{
+    top: 55%;
 }
 
+.text-transition{
+    transition: all ease-in-out .3s;
+}
+
+.testo-servizio .title, .testo-servizio .pre-title{
+    text-align: left;
+}
+
+.testo-servizio p{
+    transition: all ease 1s;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.description:hover p {
+    height: 150px;
+    overflow: visible;
+    opacity: 1;
+    margin-top: 20px;
+}
 
 /* ======= SOLUZIONI ABITATIVE ======== */
 .soluzioni-abitative{
@@ -395,17 +419,6 @@ a{
     border-bottom: 0px;
     border-top: 0px;
     padding: 80px;
-}
-
-.testo-soluzioni .title{
-    color: var(--color-oro);
-    margin-bottom: var(--margin-default);
-}
-
-.testo-soluzioni .descrizione{
-    font-size: 30px;
-    font-weight: var(--font-weigth-semi-bold);
-    margin-bottom: var(--margin-medium);
 }
 
 .down-side{
@@ -650,7 +663,7 @@ a{
     .nav-links{
         height: 0;
         position: absolute;
-        top: 140px;
+        top: 126px;
         left: 0;
         width: 100%;
         background: #11101b;
@@ -717,6 +730,57 @@ a{
         justify-content: center;
         transform: translateX(50%);
     }
+    /* ====== SERVIZI ======= */
+    .description:hover .testo-servizio{
+        top: 48%;
+    }
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .planimetria-container{
+        width: 875px;
+    }
+}
+
+@media screen and (max-width: 892px) {
+    /* ====== HEADER ======= */
+    .nav-links{
+        top: 140px;
+    }
+    /* ======= SERVIZI ======= */
+    .servizi{
+        grid-template-columns: 1fr;
+    }
+    .description{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .description:hover{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .description:hover .testo-servizio{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .testo-servizio .title, .testo-servizio .pre-title{
+        text-align: center;
+    }
+    .testo-servizio p{
+        opacity: 1;
+        height: inherit;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .description:hover p{
+        height: inherit;
+    }
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .testo-soluzioni{
+        padding: 60px 80px;
+    }
+    .planimetria-container{
+        width: 745px;
+    }
+    .soluzioni-abitative .slide-content{
+        width: 580px !important;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -758,12 +822,49 @@ a{
     .storia .scrollbar-container{
         margin-top: 30px;
     }
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .testo-soluzioni{
+        padding: 60px;
+        border: none;
+        width: 80%;
+    }
+    .planimetria-container{
+        width: 600px;
+        margin-bottom: 6rem;
+    }
+    .soluzioni-abitative .slide-content{
+        width: 450px !important;
+    }
+    .plan-sopra{
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .plan-sopra .icona{
+        max-width: 115px;
+        position: initial;
+        left: initial;
+        top: initial;
+    }
+    .bordi{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 650px) {
     /* ===== PROGETTO ====== */
     .swiper-navigation{
         display: none;
+    }
+    /* ====== SOLUZIONI ABITATIVE ======= */
+    .planimetria-container{
+        width: 490px;
+        margin-bottom: 6rem;
+    }
+    .soluzioni-abitative .slide-content{
+        width: 400px !important;
     }
 }
 
@@ -797,6 +898,39 @@ a{
     .scopri a{
         font-size: 13px;
     }
+    /* ====== SERVIZI ======= */
+    .description{
+        min-height: 400px;
+    }
+    /* ====== SOLUZIONI ABITATIVE ====== */
+    .testo-soluzioni{
+        width: 100%;
+    }
+    .planimetria-container{
+        width: 368px;
+        margin-bottom: 6rem;
+    }
+    .plan-image{
+        padding: 20px;
+    }
+    .soluzioni-abitative .swiper-wrapper{
+        margin-bottom: 50px;
+    }
+    .soluzioni-abitative .prev-button{
+        top: initial;
+        bottom: 0;
+        left: 44%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+    
+    .soluzioni-abitative .next-button{
+        top: initial;
+        bottom: 0;
+        right: 44%;
+        transform: translateX(50%);
+        z-index: 10;
+    }
 }
 
 @media screen and (max-width: 369px) {
@@ -817,5 +951,13 @@ a{
     }
     .carousel-2 .contorno{
         display: none;
+    }
+    /* ===== SOLUZIONI ABITATIVE ====== */
+    .testo-soluzioni{
+        padding: 40px;
+    }
+    .planimetria-container{
+        width: 300px;
+        margin-bottom: 6rem;
     }
 }

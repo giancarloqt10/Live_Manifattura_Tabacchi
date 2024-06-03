@@ -80,4 +80,18 @@ let swiper2 = new Swiper(".mySwiper2", {
       prevEl: ".soluzioni-abitative .swiper-custom-button-prev",
     },
     loop: true,
+    breakpoints: {
+        // when window width is >= 320px
+        660: {
+          spaceBetween: 45
+        },
+        1681: {
+            slidesPerView: 2,
+            spaceBetween: 45
+        },
+        1920:{
+           slidesPerView: 2.5,
+           spaceBetween: 45
+        }
+    }
 });
