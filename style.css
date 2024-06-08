@@ -33,6 +33,7 @@ body{
     font-size: var(--font-paragraph);
     font-style: normal;
     font-weight: var(--font-weigth-regular);
+    scroll-behavior: smooth;
 }
 
 a{
@@ -131,6 +132,10 @@ a{
 .nav-links ul li .prenota{
     border: 1px solid white;
     padding: 15px;
+}
+
+.contact-btn2{
+    display: none;
 }
 
 .navbar.scrolled .nav-links ul .prenota{
@@ -495,129 +500,124 @@ a{
 
 /* ===== CONTATTI ======== */
 .contatti{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--color-nero);
-    color: white;
-    padding: 60px;
+    display: flex;
+    padding: 100px;
+    width: 100%;
 }
 
-.testo-form *{
-    margin-bottom: var(--margin-medium);
-    font-size: var(--font-title);
+.testo-contatti, .form{
+    width: 50%;
 }
 
-.testo-form .title{
-    font-size: 15px;
+.testo-contatti{
+    padding-right: 30px;
 }
 
-.testo-form .descrizione{
-    font-size: 30px;
-    font-weight: var(--font-weigth-semi-bold);
-}
-
-.testo-form .paragrafo-2{
-    font-size: var(--font-small);
+.testo-contatti p, .info{
     margin: 30px 0;
 }
 
-.testo-form .info{
-    margin-bottom: 5px !important;
+.info span{
+    font-size: 18px;
+    margin-right: 10px;
 }
 
-.form *{
-    margin-bottom: var(--margin-default);
-}
-
-.form-group{
+.campo-form{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
 }
 
-.form-group .label{
-    font-size: var(--font-title);
+.label-form{
+    width: 17%;
 }
 
-.form-container .form-group input, 
-.form-container .form-group textarea,
-.form-container .form-group select,
-.form-container .form-group input:active,
-.form-container .form-group textarea:active,
-.form-container .form-group select:active
-{
-    border: none !important;
-    border-bottom: 1px solid white !important;
-    background-color: transparent;
+.campo-form input, .campo-form select, .campo-form textarea{
+    width: 83%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
     color: white;
-    margin-left: var(--margin-medium);
+    font-family: "Montserrat", sans-serif;
 }
 
-.form-container .form-group .input-text, .form-container .form-group .select-options{
-    width: 100%;
+.campo-form input:focus, .campo-form select:focus, .campo-form textarea:focus{
+    outline: none;
+    box-shadow: none;
 }
-
-.form-container .form-group select{
-    color: white;
-}
-
 
 .checkbox-group{
     display: flex;
-}
-
-.checkbox-group:first-child{
-    margin-top: 40px;
+    align-items: flex-start;
 }
 
 .checkbox-group div{
-    margin-left: var(--margin-default);
-    font-size: 10px;
-    font-family: "Montserrat", sans-serif !important;
+    font-size: 11px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-top: -3px;
 }
 
-.form-container button{
-    font-family: "Montserrat", sans-serif;
-    padding: var(--padding-default) var(--margin-medium);
+.submit{
+    background: white; 
+    padding: 10px 30px; 
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;;
 }
 
 /* ===== MAPS ========= */
-.maps-container img{
-    width: 100%;
+.maps{
+    background: url('./media/manifattura_maps.png');
+    background-size: cover;
+    height: 350px;
 }
 
 /* ===== PARTNERS ======= */
 .partners{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    padding: 50px;
     background: var(--color-grigio-caldo);
-    border-bottom: 1.5px solid var(--color-bronzo);
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 1.5px solid var(--color-oro);
+}
+
+.partners-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .partner{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-
-.partner .title{
-    margin-bottom: var(--margin-medium);
+    align-items: center;
 }
 
 .partner-image{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    height: 100px;
+    margin-top: 30px;
+    height: 60px;
 }
 
-.partner-image img{
+.logo-partner{
+    width: 120px;
+}
+
+.logo-2{
+    width: 80px;
+    margin-left: 40px;
+}
+
+.logo-3{
     width: 100px;
-    padding: 0 var(--padding-medium);
 }
 
+.logo-4{
+    width: 60px;
+}
 
 /* ===== POLICIES ======= */
 .policies{
@@ -647,6 +647,17 @@ a{
     }
     .nav-links ul >:not(:last-child){
         margin-right: 20px;
+    }
+    /* ====== CONTATTI ====== */
+    .testo-contatti{
+        padding-right: 50px;
+    }
+    .label-form{
+        width: 25%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 75%;
     }
 }
 
@@ -738,6 +749,33 @@ a{
     .planimetria-container{
         width: 875px;
     }
+    /* ====== CONTATTI ====== */
+    .contatti{
+        flex-direction: column;
+    }
+    .testo-contatti, .form{
+        width: 100%;
+    }
+    .testo-contatti{
+        margin-bottom: 30px;
+        padding-right: 0;
+    }
+    .label-form{
+        width: 10%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 82%;
+    }
+    /* ===== MAPS ======= */
+    .maps{
+        background-position: center;
+    }
+    /* ===== POLICIES ======= */
+    .policies{
+        justify-content: space-between;
+        padding: var(--padding-medium) 30px;
+    }
 }
 
 @media screen and (max-width: 892px) {
@@ -781,6 +819,36 @@ a{
     .soluzioni-abitative .slide-content{
         width: 580px !important;
     }
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 80px;
+    }
+    .label-form{
+        width: 17%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 80%;
+    }
+    /* ===== MAPS ======= */
+    .maps{
+        height: 320px;
+        background-repeat: no-repeat;
+    }
+    /* ===== PARTNERS ====== */
+    .partners{
+        padding: 60px 20px;
+    }
+    .partners-container{
+        justify-content: space-between;
+    }
+    /* ===== POLICIES ======= */
+    .policies{
+        padding: 15px;
+    }
+    .policies a{
+        font-size: 13px;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -791,6 +859,17 @@ a{
     .paragraph{
         font-size: 13px;
         padding: 0 30px;
+    }
+    .contact-btn2{
+        display: block !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1100;
+        width: 100%;
+        background: #2a2a2a;
+        text-align: center;
+        padding: 20px;
     }
     /* ======= PROGETTO ========= */
     .up-progetto{
@@ -851,6 +930,48 @@ a{
     .bordi{
         display: none;
     }
+    /* ===== CONTATTI ====== */
+    .label-form{
+        width: 15%;
+    }
+    
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 75%;
+    }
+    /* ======= MAPS ====== */
+    .maps{
+        background-position: 75% 25%;
+    }
+    /* ===== PARTNERS ====== */
+    .partners{
+        padding: 40px;
+    }
+    .partners-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .partners-container > *:not(:last-child){
+        margin-bottom: 50px;
+    }
+    .partner-image{
+        margin-top: 15px;
+    }
+    /* ===== POLICIES ======= */
+    .policies{
+        padding: 30px;
+        padding-bottom: 85px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .policies > *:not(:last-child){
+        margin-bottom: 15px;
+    }
+    .policies a{
+        font-size: 15px;
+    }
+    .barra-verticale{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -865,6 +986,20 @@ a{
     }
     .soluzioni-abitative .slide-content{
         width: 400px !important;
+    }
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 80px 50px;
+    }
+    .campo-form{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .label-form{
+        margin-bottom: 20px;
+    }
+    .campo-form input, .campo-form select, .campo-form textarea{
+        width: 100%;
     }
 }
 
@@ -931,6 +1066,14 @@ a{
         transform: translateX(50%);
         z-index: 10;
     }
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 80px 40px;
+    }
+    /* ===== MAPS ===== */
+    .maps{
+        background-position: 70% 20%;
+    }
 }
 
 @media screen and (max-width: 369px) {
@@ -959,5 +1102,27 @@ a{
     .planimetria-container{
         width: 300px;
         margin-bottom: 6rem;
+    }
+    /* ====== CONTATTI ====== */
+    .contatti{
+        padding: 60px 25px;
+    }
+    /* ===== MAPS ===== */
+    .maps{
+        height: 350px;
+        background-position: 65%;
+    }
+    /* ===== POLICIES ======= */
+    .policies{
+        padding: 20px;
+        padding-bottom: 78px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .policies > *:not(:last-child){
+        margin-bottom: 8px;
+    }
+    .policies a{
+        font-size: 14px;
     }
 }

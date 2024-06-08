@@ -26,11 +26,12 @@
                     </div>
                     <div class="nav-links">
                         <ul>
-                            <li><a href="">Il progetto</a></li>
-                            <li><a href="">La storia</a></li>
-                            <li><a href="">Soluzioni abitative</a></li>
-                            <li><a href="" class="prenota">PRENOTA UN APPUNTAMENTO</a></li>
+                            <li><a href="#progetto">Il progetto</a></li>
+                            <li><a href="#storia">La storia</a></li>
+                            <li><a href="#soluzioni-abitative">Soluzioni abitative</a></li>
+                            <li class="prenota-container"><a href="#contatti" class="prenota">PRENOTA UN APPUNTAMENTO</a></li>
                         </ul>
+                        <a href="#contatti" class="contact-btn2">CONTATTACI</a>
                     </div>
                     <div class="nav-icon" id="nav-icon">☰</div>
                 </nav>
@@ -268,115 +269,101 @@
 
 
         <!-- ========== CONTATTI ========= -->
-        <div class="contatti" id="contatti">
-            <div class="lato-sinistro">
-                <div class="testo-form">
-                    <div class="title">FORM</div>
-                    <div class="descrizione">
-                        Vuoi conoscere tutti i dettagli?
-                    </div>
-                    <div class="paragrafo">
-                        <strong>Compila il form</strong> per scoprire il progetto e le nuove residenze <br> di <strong>Manifattura Tabacchi</strong>
-                    </div>
-                    <div class="paragrafo-2">
-                        Sarai ricontattato da un consulente dedicato.
-                    </div>
-                    <div class="info">
-                        <span class="icona">
-                            <i class="fa-solid fa-phone"></i>
-                        </span>
-                        <span>Prenota il tuo appuntamento: +39 055 06.20.103</span>
-                    </div>
-                    <div class="info">
-                        <span class="icona">
-                            <i class="fa-solid fa-location-pin"></i>
-                        </span>
-                        <span>Firenze | Via delle Cascine, 35</span>
-                    </div>
+        <div class="contatti" id="contatti" style="background: #1F292E; color: white;">
+            <div class="testo-contatti">
+                <div class="pre-title" style="text-align: left;">FORM</div>
+                <div class="title" style="text-align: left; font-weight: 700;">Vuoi conoscere tutti i dettagli?</div>
+                <p style="font-size: 20px;"><strong>Compila il form</strong> per scoprire il progetto e le nuove residenze di <strong>Manifattura Tabacchi</strong></p>
+                <p style="font-size: 14px;">Sarai ricontattato da un consulente dedicato.</p>
+                <div class="info">
+                    <span class="icona">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+                    <span>Prenota il tuo appuntamento: +39 055 06.20.103</span>
+                </div>
+                <div class="info">
+                    <span class="icona">
+                        <i class="fa-solid fa-location-pin"></i>
+                    </span>
+                    <span>Firenze | Via delle Cascine, 35</span>
                 </div>
             </div>
-            <div class="lato-destra">
-                <div class="form-container">
-                    <form action="" method="post" class="form">
-                        <div class="form-group">
-                            <div class="label">NOME*</div>
-                            <input type="text" id="nome" name="nome" class="input-text" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="label">COGNOME*</div>
-                            <input type="text" id="cognome" name="cognome" class="input-text" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="label">EMAIL*</div>
-                            <input type="email" id="email" name="email" class="input-text" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="label">TELEFONO*</div>
-                            <input type="tel" id="telefono" name="telefono" class="input-text" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="label">TIPOLOGIE</div>
-                            <select id="tipologie" name="tipologie" class="select-options" required>
-                                <option value="">Seleziona</option>
-                                <option value="Appartamenti">Appartamenti</option>
-                                <option value="Loft">Loft</option>
-                                <option value="Attici">Attici</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="label">MESSAGGIO</div>
-                            <textarea id="messaggio" name="messaggio" class="input-text" required></textarea>
-                        </div>
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="accetta-informativa" name="accetta-informativa" required>
-                            <div for="accetta-informativa">Dichiaro di aver ricevuto idonea informativa e di prestare il suo consenso, esplicito ed inequivocabile, in relazione alle finalità del trattamento, come espresse al punto 3, lettera b, dell'informativa per il trattamento dei dati</div>
-                        </div>
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="accetta-servizi" name="accetta-servizi" required>
-                            <div for="accetta-servizi">Acconsento alla registrazione dei suoi dati per ricevere servizio personalizzato sulle sue reali esigenze d'acquisto</div>
-                        </div>
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="accetta-marketing" name="accetta-marketing" required>
-                            <div for="accetta-marketing">Acconsento all'invio di comunicazioni di marketing, per mezzo di sistemi informatici automatizzati, ivi inclusi comunicazioni commerciali o promozionali a mezzo email o SMS, ovvero per ricerche ed analisi di mercato</div>
-                        </div>
-                        <button type="submit">INVIA RICHIESTA</button>
-                    </form>
+            <form id="form" class="form">
+                <div class="campo-form">
+                    <div class="label-form" id="name-label">NOME*</div>
+                    <input type="text" name="name" id="name" maxlength="256" aria-labelledby="name-label" required>
                 </div>
-            </div>
+                <div class="campo-form">
+                    <div class="label-form" id="last-name-label">COGNOME*</div>
+                    <input type="text" name="last-name" maxlength="256" id="last-name" aria-labelledby="last-name-label" required>
+                </div>
+                <div class="campo-form">
+                    <div class="label-form" id="email-label">EMAIL*</div>
+                    <input type="email" name="email" maxlength="256" id="email" aria-labelledby="email-label" required>
+                </div>
+                <div class="campo-form">
+                    <div class="label-form" id="phone-label">TELEFONO*</div>
+                    <input type="text" name="phone" maxlength="256" id="phone" aria-labelledby="phone-label" required>
+                </div>
+                <div class="campo-form">
+                    <div class="label-form" id="tipologie-label">TIPOLOGIE</div>
+                    <select id="tipologie" name="tipologie" style="color:#fff;" aria-labelledby="tipologie-label">
+                        <option value="">Seleziona</option>
+                        <option value="Loft">Loft</option>
+                        <option value="Bilocale">Bilocale</option>
+                        <option value="Trilocale">Trilocale</option>         
+                    </select>
+                </div>
+                <div class="campo-form">
+                    <div class="label-form" id="message-label">MESSAGGIO</div>
+                    <textarea placeholder="" maxlength="5000" id="message" name="message" aria-labelledby="message-label"></textarea>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="accetta-informativa" name="accetta-informativa" required>
+                    <div for="accetta-informativa">Dichiaro di aver ricevuto idonea informativa e di prestare il suo consenso, esplicito ed inequivocabile, in relazione alle finalità del trattamento, come espresse al punto 3, lettera b, dell'informativa per il trattamento dei dati</div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="accetta-servizi" name="accetta-servizi" required>
+                    <div for="accetta-servizi">Acconsento alla registrazione dei suoi dati per ricevere servizio personalizzato sulle sue reali esigenze d'acquisto</div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="accetta-marketing" name="accetta-marketing" required>
+                    <div for="accetta-marketing">Acconsento all'invio di comunicazioni di marketing, per mezzo di sistemi informatici automatizzati, ivi inclusi comunicazioni commerciali o promozionali a mezzo email o SMS, ovvero per ricerche ed analisi di mercato</div>
+                </div>
+                <button id="submit" class="submit" type="submit">INVIA RICHIESTA</button>
+            </form>
         </div>
 
 
 
         <!-- ======= MAPS ========= -->
-        <div class="maps" id="maps">
-            <div class="maps-container">
-                <a href="https://maps.app.goo.gl/smLDjy384AVzb4rD9">
-                    <img src="./media/manifattura_maps.png" alt="">
-                </a>
-            </div>
-        </div>
+        <a href="https://maps.app.goo.gl/smLDjy384AVzb4rD9">
+            <div class="maps" id="maps"></div>
+        </a>
 
 
 
         <!-- ======= PARTNERS ======= -->
         <div class="partners" id="partners">
-            <div class="investors partner">
-                <div class="title">INVESTOR</div>
-                <div class="partner-image">
-                    <img src="./media/icona_investor1.png" alt="">
-                    <img src="./media/icona_investor2.png" alt="">
+            <div class="partners-container">
+                <div class="partner">
+                    <div class="partner-type">INVESTOR</div>
+                    <div class="partner-image">
+                        <img src="./media/icona_investor1.png" class="logo-partner logo-1" alt="">
+                        <img src="./media/icona_investor2.png" class="logo-partner logo-2" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="developers partner">
-                <div class="title">DEVELOPER</div>
-                <div class="partner-image">
-                    <img src="./media/icona_developer.png" alt="">
+                <div class="partner">
+                    <div class="partner-type">DEVELOPER</div>
+                    <div class="partner-image">
+                        <img src="./media/icona_developer.png" class="logo-partner logo-3" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="sales partner">
-                <div class="title">EXCLUSIVE SALES</div>
-                <div class="partner-image">
-                    <img src="./media/icona_sales.png" alt="">
+                <div class="partner">
+                    <div class="partner-type">EXCLUSIVE SALES</div>
+                    <div class="partner-image">
+                        <img src="./media/icona_sales.png" class="logo-partner logo-4" alt="">
+                    </div>
                 </div>
             </div>
         </div>

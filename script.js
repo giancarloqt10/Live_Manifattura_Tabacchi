@@ -22,6 +22,35 @@ navIcon.addEventListener('click', ()=>{
     }
 })
 
+// Funzione per scorrimento fluido
+function smoothScroll(target, offset) {
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+}
+
+// Aggiungi gestore eventi per i link della navbar
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+        // Chiudi la navbar mobile se è aperta
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            navIcon.textContent = "☰";
+        }
+
+        // Scorri fluidamente all'elemento
+        smoothScroll(targetElement, navbarHeight);
+    });
+});
+
 if(window.innerWidth < 1050){
     logoImg.src= "./media/logo_black.svg";
 }
