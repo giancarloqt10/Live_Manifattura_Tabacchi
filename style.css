@@ -40,6 +40,37 @@ a{
     color: white;
 }
 
+/* Chrome, Safari, Opera */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #1F292E inset !important;
+    box-shadow: 0 0 0 1000px #1F292E inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
+}
+
+/* Firefox */
+input:-moz-autofill,
+input:-moz-autofill:hover, 
+input:-moz-autofill:focus, 
+input:-moz-autofill:active {
+    background-color: #1F292E !important;
+    color: white !important;
+    caret-color: white;
+}
+
+/* Internet Explorer/Edge */
+input:-ms-autofill,
+input:-ms-autofill:hover, 
+input:-ms-autofill:focus, 
+input:-ms-autofill:active {
+    background-color: #1F292E !important;
+    color: white !important;
+    caret-color: white;
+}
+
 .pre-title{
     font-size: var(--font-small);
     font-weight: var(--font-weight-bold);
@@ -535,6 +566,7 @@ a{
 
 .campo-form input, .campo-form select, .campo-form textarea{
     width: 83%;
+    margin-left: 15px;
     background: transparent;
     border: none;
     border-bottom: 1px solid white;
@@ -1000,6 +1032,7 @@ a{
     }
     .campo-form input, .campo-form select, .campo-form textarea{
         width: 100%;
+        margin-left: 0;
     }
 }
 
